@@ -1,0 +1,25 @@
+@use '../custom' as *;
+@use '../components/mixings' as *;
+
+.menu {
+    @include gradient;
+    @include media-breakpoint-down(sm) {
+
+    }
+    li{
+        padding: 0 0.7rem;
+
+        a{
+            color: $white !important;
+            text-transform: capitalize;
+            font-weight: 400;
+        }
+
+    }
+    
+
+        a:hover{
+            color: $sky !important;
+        }
+   
+}

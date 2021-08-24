@@ -1,0 +1,45 @@
+@use '../custom' as *;
+
+.display-2 {
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+    
+    &--intro{
+        
+         display: inline-block;
+         font-weight: 700;
+         color: $white;
+         font-family: 'Poppins', sans-serif;
+         padding : 0 0 1rem 1rem;
+     }
+
+     &--description1{
+         font-size: 1.2rem;
+         display: block;
+         color: $white;
+         margin-top: 2rem;
+         padding : 0 0 1rem 1rem;
+         text-transform: none;
+
+
+         @include media-breakpoint-up(lg){
+             font-size: 2rem;
+             display: inline-block;
+         }
+     }
+
+        &--description2, &--description3{
+         font-size: 0.75rem;
+         display: block;
+         color: $white;
+         margin-bottom: 0.5rem;
+         padding : 0 0 1rem 1rem;
+         text-transform: none;
+
+         @include media-breakpoint-up(lg){
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+     }
+ }
