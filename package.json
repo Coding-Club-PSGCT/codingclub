@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Jaswant-G/codingclub.github.io#readme",
   "devDependencies": {
-    "sass": "^1.38.0"
+    "sass": "^1.38.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",

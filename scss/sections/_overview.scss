@@ -1,0 +1,35 @@
+@use '../custom' as *;
+@use '../components/mixings' as *;
+
+.overview{
+    position: relative;
+    padding: 1rem 1rem;
+
+    .theme{
+        position: relative;
+        
+    
+        &-content{
+            padding: 1rem;
+            margin-top: 0rem;
+            p{
+                font-size: 1.3rem;
+
+                @include media-breakpoint-up(lg)
+                {
+                    font-size: 1.6rem;
+                }
+            }
+
+            @include media-breakpoint-up(lg){
+                margin-top: 5rem;
+            }
+        }
+
+        &__pic{
+            max-width: 100%;
+        }
+    }
+    
+}
+
