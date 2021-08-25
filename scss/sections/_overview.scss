@@ -30,6 +30,20 @@
             max-width: 100%;
         }
     }
+    ul{
+        list-style: none;
+    }
+
+    li::before {content: "•"; color: $navy-blue-light;
+        display: inline-block; 
+        font-size: 2rem;
+        width: 1em;
+        margin-left: -1em;
+        @include media-breakpoint-down(sm){
+            font-size: 1.5rem;
+            padding-top: 2rem;
+        }
+    }
     
 }
 

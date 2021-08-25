@@ -4,7 +4,7 @@
 @use 'components/mixings';
 @use 'components/typography';
 @use 'sections/navbar';
-@use 'sections/intro';
+@use 'sections/intro-section';
 @use 'sections/overview';
 @use 'sections/rules';
 @use 'sections/timeline';
