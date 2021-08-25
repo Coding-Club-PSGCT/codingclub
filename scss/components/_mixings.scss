@@ -2,7 +2,11 @@
 //gradients
 
 @mixin gradient {
-    background:linear-gradient(90deg, $navy-blue-dark 0%, $navy-blue-light 100%);
+    background:linear-gradient(to right, $navy-blue-dark 0%, $navy-blue-light 100%);
+}
+
+@mixin gradient1{
+    background:linear-gradient(to right, $navy-blue-light 0%, $navy-blue-dark 100%);
 }
 
 

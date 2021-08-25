@@ -1,0 +1,54 @@
+@use '../custom' as *;
+@use '../components/mixings' as *;
+
+.rules{
+    position: relative;
+    padding: 0rem 1rem 1rem;
+
+    // .theme{
+    //     position: relative;
+        
+    
+    //     &-content{
+    //         padding: 1rem;
+    //         margin-top: 0rem;
+    //         p{
+    //             font-size: 1.3rem;
+
+    //             @include media-breakpoint-up(lg)
+    //             {
+    //                 font-size: 1.6rem;
+                    
+    //             }
+    //         }
+
+    //         @include media-breakpoint-up(lg){
+    //             margin-top: 5rem;
+    //         }
+    //     }
+
+    // }
+    ul{
+        list-style: none;
+
+        a{
+            text-decoration: none;
+            color: $navy-blue-light;
+        }
+        a:hover{
+            color: $navy-blue-dark;
+        }
+    }
+
+    li::before {content: "•"; color: $navy-blue-light;
+        display: inline-block; 
+        font-size: 2rem;
+        width: 1em;
+        margin-left: -1.3em;
+        @include media-breakpoint-down(sm){
+            font-size: 1.5rem;
+            padding-top: 2rem; 
+        }
+    }
+    
+}
