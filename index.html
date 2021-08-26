@@ -14,7 +14,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark menu fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="home">
+          <a class="navbar-brand" href="#home">
               <img src="images/coding-club-45px.png" class=" img-fluid" alt="">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,9 +77,9 @@
                   <button class="rounded-pill btn-rounded" onclick="javascript:window.open('https://drive.google.com/file/d/1T5pXcV1wnTlYnSbZE_f4kenNUgxvR2ZO/view?usp=sharing', '_blank');">Download Template</button>
                 </div>
 
-                  <div class="btn-group mx-auto btn2" role="group">
+                  <!-- <div class="btn-group mx-auto btn2" role="group">
                 <button class="rounded-pill btn-rounded">Register</button>
-              </div>
+              </div> -->
 
               </div>
             </div>
@@ -355,18 +355,18 @@
       
       </div>
     </footer>
-
+    <script>
+      const navLinks = document.querySelectorAll('.nav-item')
+      const menuToggle = document.getElementById('navbarNav')
+      const bsCollapse = new bootstrap.Collapse(menuToggle)
+      navLinks.forEach((l) => {
+          l.addEventListener('click', () => { bsCollapse.toggle() })
+      })
+  
+      </script>
     <script src="/assets/js/bootstrap.bundle.js">
     </script>
 
-    <script>
-    const navLinks = document.querySelectorAll('.nav-item')
-    const menuToggle = document.getElementById('navbarNav')
-    const bsCollapse = new bootstrap.Collapse(menuToggle)
-    navLinks.forEach((l) => {
-        l.addEventListener('click', () => { bsCollapse.toggle() })
-    })
 
-    </script>
 </body>
 </html>
