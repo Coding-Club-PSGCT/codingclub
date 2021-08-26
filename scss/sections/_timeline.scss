@@ -1,6 +1,15 @@
 @use '../custom' as *;
 @use '../components/mixings' as *;
 
+#timeline{
+    position: relative;
+    top: 300px;
+
+    @include media-breakpoint-down(sm){
+        top: -20px;
+    }
+}
+
 
 .timelines{
     font-family: 'Poppins', sans-serif;

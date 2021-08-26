@@ -8,6 +8,5 @@
 @use 'sections/overview';
 @use 'sections/rules';
 @use 'sections/timeline';
-@use 'sections/contact';
 @use 'sections/footer';
 /*# sourceMappingURL=style.css.map */

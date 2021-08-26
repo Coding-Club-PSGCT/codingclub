@@ -1,6 +1,7 @@
 @use '../custom' as *;
 @use '../components/mixings' as *;
 
+
 .intro-section{
     @include gradient;
     padding: 12rem 0 0 0;

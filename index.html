@@ -10,10 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark menu fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="home">
               <img src="images/coding-club-45px.png" class=" img-fluid" alt="">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +24,7 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                <a class="nav-link active"  href="#home" data-toggle="collapse" data-target=".navbar-collapse.show">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#Overview">Overview</a>
@@ -35,7 +36,7 @@
                 <a class="nav-link" href="#rules">Rules</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="#contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -73,7 +74,7 @@
               <div class="btn-toolbar" role="toolbar">
 
                   <div class="btn-group mx-auto btn1" role="group">
-                  <button class="rounded-pill btn-rounded">Download Template</button>
+                  <button class="rounded-pill btn-rounded" onclick="javascript:window.open('https://drive.google.com/file/d/1T5pXcV1wnTlYnSbZE_f4kenNUgxvR2ZO/view?usp=sharing', '_blank');">Download Template</button>
                 </div>
 
                   <div class="btn-group mx-auto btn2" role="group">
@@ -91,11 +92,11 @@
       </section>
 
       <!-- Overview -->
- 
-     <section id="Overview" class="overview">
-      <div class="container ">
+      <div id="Overview"></div>
+     <section class="overview">
+      <div class="container" >
         <div class="row text-center ">
-            <h1 class="display-3--title fw-bold">Overview</h1>
+            <h1 class="display-3--title fw-bold" ">Overview</h1>
             <!-- <hr style="width:100px; height:3px;" class="mx-auto"> -->
             <div class="heading-line mt-2 mb-4"></div>
             <p class="lead pt-1 pb-0 ">We are calling all creative minds, problem solvers, the geeks and coders at heart to re-imagine the future with us.</p>
@@ -160,12 +161,12 @@
     </section>
 
 <!-- Timeline section -->
-
-    <section id="timeline" class="timelines">
+<div id="timeline"></div>
+    <section  class="timelines">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,128C960,117,1056,75,1152,69.3C1248,64,1344,96,1392,112L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
       <div class="container">
         <div class="row text-center text-white">
-          <h1 class="display-4--title fw-bold">Timeline</h1>
+          <h1 class="display-4--title fw-bold" >Timeline</h1>
           <hr style="width: 100px; height: 3px;" class="mx-auto text-white">
 
 
@@ -173,7 +174,7 @@
                 <div class="main-timeline">
                     <div class="timeline">
                         <div class="timeline-content">
-                            <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                            <div class="timeline-icon"><i class="fa fa-terminal"></i></div>
                             <h3 class="title">Phase 1 <br> <i> (Ends on September 22) </i></h3>
                             <p class="description">
                                 <span class="timeline-inner-title"> Registrations and Idea submissions :</span> <br>
@@ -183,7 +184,7 @@
                     </div>
                     <div class="timeline">
                         <div class="timeline-content">
-                            <div class="timeline-icon"><i class="fa fa-rocket"></i></div>
+                            <div class="timeline-icon"><i class="fa fa-file-code"></i></div>
                             <h3 class="title">Phase 2 <br> <i> (Starts on September 25) </i></h3>
                             <p class="description">
                               <span class="timeline-inner-title"> Presentation :</span> <br>
@@ -194,7 +195,7 @@
 
                     <div class="timeline">
                       <div class="timeline-content">
-                          <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                          <div class="timeline-icon"><i class="fa fa-sitemap"></i></div>
                           <h3 class="title">Phase 3 <br> <i> (1st Week of November) </i></h3>
                           <p class="description">
                               <span class="timeline-inner-title"> Prototyping :</span> <br>
@@ -204,7 +205,7 @@
                   </div>
                   <div class="timeline">
                       <div class="timeline-content">
-                          <div class="timeline-icon"><i class="fa fa-rocket"></i></div>
+                          <div class="timeline-icon"><i class="fa fa-laptop-code"></i></div>
                           <h3 class="title">Review </h3>
                           <p class="description">
                             I) End of November <br>
@@ -215,11 +216,12 @@
 
                   <div class="timeline">
                     <div class="timeline-content">
-                        <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                        <div class="timeline-icon"><i class="fa fa-award"></i></div>
                         <h3 class="title">Final Phase <br> <i> (2nd week of January) </i></h3>
                         <p class="description">
                             <span class="timeline-inner-title"> Grand Finale :</span> <br>
-                            Compete in the grand finale and present your innovative ideas to win big.
+                            Compete in the grand finale and present your innovative ideas to win big. Cash prizes and certificates will
+                            be given for the <b>top 3</b> projects.
                         </p>
                       </div>
                 </div>
@@ -234,8 +236,8 @@
 
     <!-- Rules section -->
 
-
-    <section id="rules" class="rules">
+    <div id="rules"></div>
+    <section class="rules">
       <div class="container">
         <div class="row text-center ">
             <h1 class="rules--title fw-bold">Rules</h1>
@@ -265,7 +267,7 @@
           </li>
           <li class="lh-lg rules--description1">
             Your project proposal should be as per the guidelines mentioned in the template.
-             Download the project proposal template here <a href="">template</a> . 
+             Download the project proposal template here <a href="https://drive.google.com/file/d/1T5pXcV1wnTlYnSbZE_f4kenNUgxvR2ZO/view?usp=sharing" target="_blank">template</a> . 
           </li>
           <li class="lh-lg rules--description1">
             Once the hackathon starts, you will get only one chance to submit your ideas.
@@ -290,6 +292,81 @@
     </div> 
     </section>
 
-    <script src="/assets/js/bootstrap.bundle.js"></script>
+<!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="row">
+          <!-- MOBILE NUMBER COLUMN -->
+          <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+            <div class="contact-box__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" viewBox="0 0 24 24" stroke-width="1"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                <path d="M15 7a2 2 0 0 1 2 2" />
+                <path d="M15 3a6 6 0 0 1 6 6" />
+              </svg>
+            </div>
+            <div class="contact-box__info">
+              <span class="contact-box__info--title">+91 9500442595</span>
+              <p class="contact-box__info--subtitle">9:00am-8:00pm IST</p>
+            </div>
+          </div>
+          <!-- EMAIL COLUMN -->
+          <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+            <div class="contact-box__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <polyline points="3 7 12 13 21 7" />
+              </svg>
+            </div>
+            <div class="contact-box__info">
+              <span class="contact-box__info--title">codingclub@psgtech.ac.in</span>
+              <p class="contact-box__info--subtitle">Email</p>
+            </div>
+          </div>
+          <!-- COLLEGE COLUMN -->
+          <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+            <div class="contact-box__imgicon">
+              <img src="images/psg-45px.png" alt="psgtech">
+            </div>
+            <div class="contact-box__info">
+              <span class="contact-box__info--title">PSG College of Technology</span>
+              <p class="contact-box__info--subtitle">Institution</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="width: 100%; height: 3px;" class="mx-auto text-white">
+      <!-- SOCIAL MEDIA -->
+      <div class="footer-social">
+        <div class="container">
+          <div class="row py-4 text-center text-white">
+            <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+              Connect with us on social media
+            </div>
+            <div class="col-lg-7 col-md-6">
+              <a href="https://www.facebook.com/Coding-Club-PSG-Tech-125112509745256" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/codingclub.psgtech/" taget="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </footer>
+
+    <script src="/assets/js/bootstrap.bundle.js">
+    </script>
+
+    <script>
+    const navLinks = document.querySelectorAll('.nav-item')
+    const menuToggle = document.getElementById('navbarNav')
+    const bsCollapse = new bootstrap.Collapse(menuToggle)
+    navLinks.forEach((l) => {
+        l.addEventListener('click', () => { bsCollapse.toggle() })
+    })
+
+    </script>
 </body>
 </html>
