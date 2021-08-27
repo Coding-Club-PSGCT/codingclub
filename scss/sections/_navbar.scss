@@ -3,13 +3,16 @@
 
 .menu {
     @include gradient;
+
     @include media-breakpoint-down(sm) {
         .clg-name{
             display: none;
 
         }
     }
-    .clg-name{
+
+
+        .clg-name{
         font-size: 1rem;
         padding-left: 1rem;
         a{
