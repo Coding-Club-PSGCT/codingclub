@@ -11322,6 +11322,9 @@ textarea.form-control-lg {
   font-size: 1rem;
   padding-left: 1rem;
 }
+.menu .clg-name a {
+  padding-left: 1rem;
+}
 .menu .clg-name:hover {
   color: #ffffff !important;
 }
