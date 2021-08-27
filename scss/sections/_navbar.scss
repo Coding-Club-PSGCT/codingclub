@@ -5,13 +5,13 @@
     @include gradient;
     @include media-breakpoint-down(sm) {
         .clg-name{
-            font-size: 1rem;
-        }
-
-        .codingclub{
             display: none;
 
         }
+    }
+    .clg-name{
+        font-size: 1rem;
+        padding-left: 1rem;
     }
 
     .clg-name:hover{

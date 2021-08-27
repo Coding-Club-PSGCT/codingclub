@@ -11315,11 +11315,12 @@ textarea.form-control-lg {
 }
 @media (max-width: 575.98px) {
   .menu .clg-name {
-    font-size: 1rem;
-  }
-  .menu .codingclub {
     display: none;
   }
+}
+.menu .clg-name {
+  font-size: 1rem;
+  padding-left: 1rem;
 }
 .menu .clg-name:hover {
   color: #ffffff !important;
