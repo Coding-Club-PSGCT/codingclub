@@ -28,19 +28,19 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active"  href="#home" data-toggle="collapse" data-target=".navbar-collapse.show">Home</a>
+                <a class="nav-link active" aria-current="page"  href="#home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#Overview">Overview</a>
+                <a class="nav-link" href="#Overview" >Overview</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#timeline">Timeline</a>
+                <a class="nav-link" href="#timeline" >Timeline</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#rules">Rules</a>
+                <a class="nav-link" href="#rules" >Rules</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link"  href="#contact" >Contact</a>
               </li>
             </ul>
           </div>
@@ -377,15 +377,15 @@
     <script src="assets/js/bootstrap.bundle.js">
     
     </script>
-    <script>
-      const navLinks = document.querySelectorAll('.nav-item')
-      const menuToggle = document.getElementById('navbarNav')
-      const bsCollapse = new bootstrap.Collapse(menuToggle)
-      navLinks.forEach((l) => {
-          l.addEventListener('click', () => { bsCollapse.toggle() })
-      })
-  
-      </script>
 
+    <script>
+      const navLinks = document.querySelectorAll('.nav-item:not(.dropdown)'); 
+      const menuToggle = document.getElementById('navbarNav'); 
+      const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false}); 
+      navLinks.forEach( function(l) 
+      { 
+        l.addEventListener('click', function() { // avoid flickering on desktop if (menuToggle.classList.contains('show')) 
+        { bsCollapse.toggle(); } }); });
+    </script>
 </body>
 </html>

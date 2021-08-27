@@ -4,10 +4,6 @@
 .menu {
     @include gradient;
 
-    .navbar-toggler{
-        margin: 1rem 0;
-        justify-content: end;
-    }
     .clg-name{
         font-size: 1rem;
         padding-left: 2rem;

@@ -16,14 +16,14 @@
         &-content{
             padding: 0rem;
             margin-top: 0rem;
-            p{
-                font-size: 1.3rem;
+            // p{
+            //     font-size: 1.3rem;
 
-                @include media-breakpoint-up(lg)
-                {
-                    font-size: 1.6rem;
-                }
-            }
+            //     @include media-breakpoint-up(lg)
+            //     {
+            //         font-size: 1.6rem;
+            //     }
+            // }
 
             @include media-breakpoint-up(lg){
                 margin-top: 5rem;

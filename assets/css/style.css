@@ -11284,7 +11284,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 575.98px) {
   .suggestions--description1 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 0 0 1rem 2rem;
   }
 }
@@ -11293,8 +11293,8 @@ textarea.form-control-lg {
 }
 @media (max-width: 575.98px) {
   .suggestions i {
-    font-size: 1.2rem;
-    padding: 0 0 1rem 1rem;
+    font-size: 1rem;
+    padding: 1rem 1rem 1.5rem 1.5rem;
   }
 }
 
@@ -11343,10 +11343,6 @@ textarea.form-control-lg {
 
 .menu {
   background: linear-gradient(to right, #021048 0%, #1e38a3 100%);
-}
-.menu .navbar-toggler {
-  margin: 1rem 0;
-  justify-content: end;
 }
 .menu .clg-name {
   font-size: 1rem;
@@ -11409,14 +11405,6 @@ textarea.form-control-lg {
 .overview .theme-content {
   padding: 0rem;
   margin-top: 0rem;
-}
-.overview .theme-content p {
-  font-size: 1.3rem;
-}
-@media (min-width: 992px) {
-  .overview .theme-content p {
-    font-size: 1.6rem;
-  }
 }
 @media (min-width: 992px) {
   .overview .theme-content {
@@ -11482,9 +11470,9 @@ textarea.form-control-lg {
   position: relative;
   top: 300px;
 }
-@media (max-width: 575.98px) {
+@media (max-width: 991.98px) {
   #timeline {
-    top: -20px;
+    top: 1rem;
   }
 }
 

@@ -9,4 +9,7 @@
 @use 'sections/rules';
 @use 'sections/timeline';
 @use 'sections/footer';
+p, h1, h2, h3 {
+  cursor: default;
+}
 /*# sourceMappingURL=style.css.map */
