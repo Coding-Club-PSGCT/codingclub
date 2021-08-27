@@ -30,7 +30,7 @@
      }
 
         &--description2, &--description3{
-         font-size: 0.75rem;
+         font-size: 0.80rem;
          display: block;
          color: $white;
          margin-bottom: 0.5rem;
@@ -42,7 +42,32 @@
             display: inline-block;
         }
      }
+
+      &--codingclub{
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: 500;
+        color: $white;
+        font-family: 'Poppins', sans-serif;
+        padding-bottom: 3rem;
+        @include media-breakpoint-down(sm){
+            font-size: 1.5rem;
+            padding-bottom: 1.5rem;
+            display: inline-block;
+        }
+        img{
+            height: 3.75rem;
+
+            @include media-breakpoint-down(sm)
+            {
+                height: 2.5rem;
+            }
+        }
+
+      }
  }
+
+
 
 //display 3
 
@@ -59,7 +84,7 @@
         -webkit-text-fill-color: transparent;
         @include media-breakpoint-down(sm){
             font-size: 1.5rem;
-            padding-top: 2rem;
+            padding: 2rem 0rem 1rem 1rem;
         }
     }
 
@@ -68,9 +93,10 @@
         font-size: 1.6rem;
         font-weight: 200;
         color: $black;
-        padding : 0 0 1rem 1.5rem;
+        padding : 0 0 1rem 0rem;
         @include media-breakpoint-down(sm){
             font-size: 1.2rem;
+            padding:0 0 1rem 1rem;
         }
     }  
 }
@@ -85,7 +111,7 @@
         font-family: 'Poppins', sans-serif;
         @include media-breakpoint-down(sm){
             font-size: 1.5rem;
-            padding-top: 2rem;
+            padding: 2rem 0rem 1rem 1rem;
         }
     }
 }
@@ -127,14 +153,19 @@
         font-size: 1.6rem;
         font-weight: 200;
         color: $black;
-        padding : 0 0 1rem 1.5rem;
+        padding : 0 0 1rem 3rem;
         @include media-breakpoint-down(sm){
             font-size: 1.2rem;
+            padding: 0 0 1rem 2rem;
         }
     }
 
     i{
         font-size: 1.3rem;
+        @include media-breakpoint-down(sm){
+            font-size: 1.2rem;
+            padding:0 0 1rem 1rem;
+        }
     }
 }
  

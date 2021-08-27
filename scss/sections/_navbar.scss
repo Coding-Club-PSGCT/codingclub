@@ -4,24 +4,32 @@
 .menu {
     @include gradient;
 
-    @include media-breakpoint-down(sm) {
-        .clg-name{
-            display: none;
-
-        }
+    .navbar-toggler{
+        margin: 1rem 0;
+        justify-content: end;
     }
-
-
-        .clg-name{
+    .clg-name{
         font-size: 1rem;
-        padding-left: 1rem;
-        a{
+        padding-left: 2rem;
+        @include media-breakpoint-down(lg){
+            font-size: 0.75rem;
             padding-left: 1rem;
         }
-    }
+        img{
+            
+            padding: 0rem 0rem;
+            margin: 0rem 0rem;
 
+             @include media-breakpoint-down(sm){
+                 height: 38px;
+             }
+         }
+        
+
+    }
+    
     .clg-name:hover{
-  
+    
             color: $white !important;
     
     }

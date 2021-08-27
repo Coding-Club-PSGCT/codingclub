@@ -14,9 +14,13 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark menu fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#home">
+          <!-- <a class="navbar-brand" href="#home">
             <img src="images/coding-club-45px.png" class=" img-fluid codingclub" alt=""> 
-        </a>
+        </a> -->
+        <a class="navbar-brand clg-name" href="https://www.psgtech.edu/" target="_blank"">
+          <img src="images/psg-45px.png" class=" img-fluid " alt="psg"> <span class="clgtext"> PSG College of Technology</span>
+      </a>
+   
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
             </span>
@@ -41,10 +45,11 @@
             </ul>
           </div>
 
-        <a class="navbar-brand clg-name d-none d-lg-block" href="https://www.psgtech.edu/" target="_blank">
-          <img src="images/psg-45px.png" class=" img-fluid " alt=""> PSG College of Technology
-      </a>
+          <!-- <a class="navbar-brand clg-name" href="https://www.psgtech.edu/" target="_blank"">
+            <img src="images/psg-45px.png" class=" img-fluid " alt="psg"> <span class="clgtext"> PSG College of Technology</span>
+        </a> -->
         </div>
+
       </nav>
 
 
@@ -56,6 +61,11 @@
           <div class="row align-items-center text-white">
             <div class="col-md-6 intros mx-auto text-center">
               <h1 class="display-2 ">
+                
+                <span class="display-2--codingclub">
+                  <img src="images/coding-club-45px.png" class=" img-fluid " alt="psg">
+                  Coding Club
+                </span>
                 <span class="display-2--intro">
                   IDEATION
                 </span>
@@ -64,8 +74,13 @@
                 <div class="display-2--description1 lh-base">
                 <p>
                   An interdisciplinary project hackathon
+                  
                 </p>
+                <!-- <a class="display-2--link clg-name text-white" href="https://www.psgtech.edu/" target="_blank">
+                  Coding Club <br><img src="images/psg-45px.png" class=" img-fluid " alt="psg"> PSG College of Technology
+              </a>  -->
               </div>
+
 
               <div class="display-2--description2 lh-lg">
                 <p>
@@ -335,8 +350,8 @@
               <img src="images/psg-45px.png" alt="psgtech">
             </div>
             <div class="contact-box__info">
-              <span class="contact-box__info--title">PSG College of Technology</span>
-              <p class="contact-box__info--subtitle">Institution</p>
+              <span class="contact-box__info--title">Coding Club</span>
+              <p class="contact-box__info--subtitle">PSG College of Technology</p>
             </div>
           </div>
         </div>
@@ -359,9 +374,18 @@
       
       </div>
     </footer>
-    <script src="/assets/js/bootstrap.bundle.js">
+    <script src="assets/js/bootstrap.bundle.js">
+    
     </script>
-
+    <script>
+      const navLinks = document.querySelectorAll('.nav-item')
+      const menuToggle = document.getElementById('navbarNav')
+      const bsCollapse = new bootstrap.Collapse(menuToggle)
+      navLinks.forEach((l) => {
+          l.addEventListener('click', () => { bsCollapse.toggle() })
+      })
+  
+      </script>
 
 </body>
 </html>
