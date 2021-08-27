@@ -14,8 +14,8 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark menu fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#home">
-              <img src="images/coding-club-45px.png" class=" img-fluid" alt="">
+          <a class="navbar-brand clg-name" href="https://www.psgtech.edu/" target="_blank">
+              <img src="images/psg-45px.png" class=" img-fluid" alt=""> PSG College of Technology
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
@@ -40,6 +40,9 @@
               </li>
             </ul>
           </div>
+          <a class="navbar-brand" href="#home">
+            <img src="images/coding-club-45px.png" class=" img-fluid codingclub" alt=""> 
+        </a>
         </div>
       </nav>
 
@@ -355,15 +358,6 @@
       
       </div>
     </footer>
-    <script>
-      const navLinks = document.querySelectorAll('.nav-item')
-      const menuToggle = document.getElementById('navbarNav')
-      const bsCollapse = new bootstrap.Collapse(menuToggle)
-      navLinks.forEach((l) => {
-          l.addEventListener('click', () => { bsCollapse.toggle() })
-      })
-  
-      </script>
     <script src="/assets/js/bootstrap.bundle.js">
     </script>
 

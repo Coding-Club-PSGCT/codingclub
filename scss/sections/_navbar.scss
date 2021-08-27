@@ -4,7 +4,20 @@
 .menu {
     @include gradient;
     @include media-breakpoint-down(sm) {
+        .clg-name{
+            font-size: 1rem;
+        }
 
+        .codingclub{
+            display: none;
+
+        }
+    }
+
+    .clg-name:hover{
+  
+            color: $white !important;
+    
     }
     li{
         padding: 0 0.7rem;

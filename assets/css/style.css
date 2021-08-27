@@ -11313,6 +11313,17 @@ textarea.form-control-lg {
 .menu {
   background: linear-gradient(to right, #021048 0%, #1e38a3 100%);
 }
+@media (max-width: 575.98px) {
+  .menu .clg-name {
+    font-size: 1rem;
+  }
+  .menu .codingclub {
+    display: none;
+  }
+}
+.menu .clg-name:hover {
+  color: #ffffff !important;
+}
 .menu li {
   padding: 0 0.7rem;
 }
