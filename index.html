@@ -197,7 +197,7 @@
                             <h3 class="title">Phase 1 <br> <i> (Ends on September 22, 2021) </i></h3>
                             <p class="description">
                                 <span class="timeline-inner-title"> Registrations and Idea submissions :</span> <br>
-                                Form a team of 2 to 5 members and submit your innovative ideas and solutions as per the project proposal template.  
+                                Form a team of 2 to 5 members and submit your innovative ideas and solutions as per the project proposal template. Registration will start by September 6, 2021.
                             </p>
                           </div>
                     </div>
@@ -240,7 +240,7 @@
                         <p class="description">
                             <span class="timeline-inner-title"> Grand Finale :</span> <br>
                             Compete in the grand finale and present your innovative ideas to win big. Cash prizes and certificates will
-                            be given for the <b>top 3</b> projects.
+                            be given for the <b>top 3</b> projects. Participation certificates will be provided for all participants.
                         </p>
                       </div>
                 </div>
@@ -260,7 +260,6 @@
       <div class="container">
         <div class="row text-center ">
             <h1 class="rules--title fw-bold">Rules</h1>
-            <!-- <hr style="width:100px; height:3px;" class="mx-auto"> -->
             <div class="heading-line mt-2 mb-4"></div>
         </div>
      
@@ -384,7 +383,9 @@
       const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false}); 
       navLinks.forEach( function(l) 
       { 
-        l.addEventListener('click', function() { // avoid flickering on desktop if (menuToggle.classList.contains('show')) 
+        l.addEventListener('click', function() { 
+          // avoid flickering on desktop
+         if (menuToggle.classList.contains('show')) 
         { bsCollapse.toggle(); } }); });
     </script>
 </body>
