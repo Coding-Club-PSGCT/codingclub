@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">`
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ideation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark menu fixed-top">
+        <div class="container">
+          <!-- <a class="navbar-brand" href="#home">
+            <img src="images/coding-club-45px.png" class=" img-fluid codingclub" alt=""> 
+        </a> -->
+        <a class="navbar-brand clg-name" href="https://www.psgtech.edu/" target="_blank">
+          <img src="images/psg-45px.png" class=" img-fluid " alt="psg"> <span class="clgtext"> PSG College of Technology</span>
+      </a>
+   
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+            </span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page"  href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Overview" >Overview</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#timeline" >Timeline</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#rules" >Rules</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="#contact" >Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- <a class="navbar-brand clg-name" href="https://www.psgtech.edu/" target="_blank"">
+            <img src="images/psg-45px.png" class=" img-fluid " alt="psg"> <span class="clgtext"> PSG College of Technology</span>
+        </a> -->
+        </div>
+
+      </nav>
+
+        <!-- Overview -->
+     <section class="register">
+      <div class="container" >
+        <div class="row text-center">
+            <h1 class="display-3--title fw-bold">Register</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Register form -->
+    <form action="/register" method="POST">
+
+      <label for="teamName">Team Name</label><br>
+      <input type="text" id="teamName" name="teamName" required placeholder="Team Name">
+
+      <label for="projectTitle"> Project Title </label><br>
+      <input type="text" id="projectTitle" name="projectTitle" placeholder="Project Title" required>
+
+      <label for="teamSize"> Team Size </label><br>
+      <select name="teamSize" id="teamSize" name="teamSize" onchange="update_form()" required>
+        <option value="2" selected> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+      </select>
+
+      <div id="teamDetails">
+      </div>
+
+      <input type="submit" value="Submit">
+    </form> 
+
+<!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="row">
+          <!-- MOBILE NUMBER COLUMN -->
+          <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+            <div class="contact-box__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" viewBox="0 0 24 24" stroke-width="1"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                <path d="M15 7a2 2 0 0 1 2 2" />
+                <path d="M15 3a6 6 0 0 1 6 6" />
+              </svg>
+            </div>
+            <div class="contact-box__info">
+              <span class="contact-box__info--title">+91 9500442595</span>
+              <p class="contact-box__info--subtitle">9:00am-8:00pm IST</p>
+            </div>
+          </div>
+          <!-- EMAIL COLUMN -->
+          <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+            <div class="contact-box__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <polyline points="3 7 12 13 21 7" />
+              </svg>
+            </div>
+            <div class="contact-box__info">
+              <span class="contact-box__info--title">codingclub@psgtech.ac.in</span>
+              <p class="contact-box__info--subtitle">Email</p>
+            </div>
+          </div>
+          <!-- COLLEGE COLUMN -->
+          <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+            <div class="contact-box__imgicon">
+              <img src="images/psg-45px.png" alt="psgtech">
+            </div>
+            <div class="contact-box__info">
+              <span class="contact-box__info--title">Coding Club</span>
+              <p class="contact-box__info--subtitle">PSG College of Technology</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="width: 100%; height: 3px;" class="mx-auto text-white">
+      <!-- SOCIAL MEDIA -->
+      <div class="footer-social">
+        <div class="container">
+          <div class="row py-4 text-center text-white">
+            <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+              Connect with us on social media
+            </div>
+            <div class="col-lg-7 col-md-6">
+              <a href="https://www.facebook.com/Coding-Club-PSG-Tech-125112509745256" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/codingclub.psgtech/" taget="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </footer>
+
+    <template>
+      
+      <label for="name"> Name </label><br>
+      <input type="text" id="name" name="name" required placeholder="Name">
+      
+      <label for="rollNo"> Roll Number </label><br>
+      <input type="text" id="rollNo" name="rollNo" required placeholder="Roll Number">
+
+      <label for="email"> Official Email </label><br>
+      <input type="email" id="email" name="email" required placeholder="Email">
+
+      <label for="number"> Phone Number </label><br>
+      <input type="text" id="number" name="number" required placeholder="Phone Number">
+
+    </template>
+
+    <script src="assets/js/bootstrap.bundle.js"> </script>
+    
+
+    <script>
+
+      const navLinks = document.querySelectorAll('.nav-item:not(.dropdown)'); 
+      const menuToggle = document.getElementById('navbarNav'); 
+      const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false}); 
+      navLinks.forEach( function(l) 
+      { 
+        l.addEventListener('click', function() { 
+          // avoid flickering on desktop
+         if (menuToggle.classList.contains('show')) 
+        { bsCollapse.toggle(); } }); });
+
+      function update_form() {
+        
+        let template = document.getElementsByTagName("template")[0];
+        let team_size = document.getElementById("teamSize").value;
+        let team_details = document.getElementById("teamDetails");
+
+        team_details.innerHTML = "";
+
+        for (i=0; i < team_size; ++i){
+          team_details.appendChild(template.content.cloneNode(true));
+        }
+
+      }
+
+      window.addEventListener("load", function() { update_form(); console.log("Event fired!") })
+
+    </script>
+</body>
+</html>
