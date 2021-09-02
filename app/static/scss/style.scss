@@ -1,0 +1,22 @@
+@use 'custom';
+
+//import components
+
+@use 'components/animations';
+@use 'components/button';
+@use 'components/mixings';
+@use 'components/typography';
+
+//import sections
+
+@use 'sections/navbar';
+@use 'sections/intro-section';
+@use 'sections/overview';
+@use 'sections/rules';
+@use 'sections/timeline';
+@use 'sections/footer';
+@use 'sections/register';
+
+p, h1, h2, h3 {
+    cursor: default;
+}

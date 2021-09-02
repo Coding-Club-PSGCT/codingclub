@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">`
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ideation</title>
+    <link rel="stylesheet" href="static/assets/css/style.css">
+    <link rel="stylesheet" href="static/assets/css/fontawesome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark menu fixed-top">
+        <div class="container">
+          <!-- <a class="navbar-brand" href="#home">
+            <img src="images/coding-club-45px.png" class=" img-fluid codingclub" alt=""> 
+        </a> -->
+        <a class="navbar-brand clg-name" href="https://www.psgtech.edu/" target="_blank">
+          <img src="static/images/psg-45px.png" class=" img-fluid " alt="psg"> <span class="clgtext"> PSG College of Technology</span>
+      </a>
+   
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+            </span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page"  href="/#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#Overview" >Overview</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#timeline" >Timeline</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#rules" >Rules</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="/#contact" >Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- <a class="navbar-brand clg-name" href="https://www.psgtech.edu/" target="_blank"">
+            <img src="images/psg-45px.png" class=" img-fluid " alt="psg"> <span class="clgtext"> PSG College of Technology</span>
+        </a> -->
+        </div>
+
+      </nav>
+
+        <!-- Overview -->
+     <section class="register">
+      <div class="container" >
+        <div class="row text-center">
+            <h1 class="display-3--title fw-bold">Register</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Register form -->
+    <div class="container">
+    <form action="/register" enctype="multipart/form-data" method="POST" class="register-form">
+
+      <div class="form-row">
+
+        <div class="col-md-6 mb-3">
+          <label for="teamName">Team Name</label>
+          <input type="text" id="teamName" name="teamName" class="form-control" placeholder="Team Name" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+        <label for="teamSize"> Team Size </label>
+          <select name="teamSize" id="teamSize" name="teamSize" onchange="update_form()" class="form-control" required>
+            <option value="2" selected> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="4"> 4 </option>
+            <option value="5"> 5 </option>
+          </select>
+        </div>
+  </div>
+
+      <div class="form-row">
+        <div class="col">
+        <label for="projectTitle"> Project Title </label>
+        <input type="text" id="projectTitle" name="projectTitle" class="form-control" placeholder="Project Title" required>
+      </div>
+      </div>
+
+      
+      <p class="lead" style="padding-top: 20px;"> <u> Team Details </u> </b>
+
+      <div id="teamDetails">
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+        <label for="proposal" class="lead"> <u> Proposal</u></label> <br>
+        <input type="file" name="proposal" class="form-control-file" id="proposal" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col text-center">
+        <input type="submit" value="Submit" class="btn btn-primary btn-pad">
+        </div>
+      </div>
+    </form> 
+  </div>
+
+<!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="row">
+          <!-- MOBILE NUMBER COLUMN -->
+          <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+            <div class="contact-box__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" viewBox="0 0 24 24" stroke-width="1"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                <path d="M15 7a2 2 0 0 1 2 2" />
+                <path d="M15 3a6 6 0 0 1 6 6" />
+              </svg>
+            </div>
+            <div class="contact-box__info">
+              <span class="contact-box__info--title">+91 9500442595</span>
+              <p class="contact-box__info--subtitle">9:00am-8:00pm IST</p>
+            </div>
+          </div>
+          <!-- EMAIL COLUMN -->
+          <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+            <div class="contact-box__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <polyline points="3 7 12 13 21 7" />
+              </svg>
+            </div>
+            <div class="contact-box__info">
+              <span class="contact-box__info--title">codingclub@psgtech.ac.in</span>
+              <p class="contact-box__info--subtitle">Email</p>
+            </div>
+          </div>
+          <!-- COLLEGE COLUMN -->
+          <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+            <div class="contact-box__imgicon">
+              <img src="static/images/psg-45px.png" alt="psgtech">
+            </div>
+            <div class="contact-box__info">
+              <span class="contact-box__info--title">Coding Club</span>
+              <p class="contact-box__info--subtitle">PSG College of Technology</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="width: 100%; height: 3px;" class="mx-auto text-white">
+      <!-- SOCIAL MEDIA -->
+      <div class="footer-social">
+        <div class="container">
+          <div class="row py-4 text-center text-white">
+            <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+              Connect with us on social media
+            </div>
+            <div class="col-lg-7 col-md-6">
+              <a href="https://www.facebook.com/Coding-Club-PSG-Tech-125112509745256" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/codingclub.psgtech/" taget="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </footer>
+
+    <template id="participantDetails">
+
+      <div class="form-group">
+
+      <div class="form-row">
+      
+        <div class="col-md-6 mb-3">
+          <label for="name"> Name </label>
+          <input type="text" id="name" name="name" class="form-control" required placeholder="Name">
+        </div>
+        
+        <div class="col-md-6 mb-3">
+          <label for="rollNo"> Roll Number </label>
+          <input type="text" id="rollNo" name="rollNo" class="form-control" required placeholder="Roll Number">
+        </div>
+      </div>
+
+      <div class="form-row">
+
+      <div class="col-md-6 mb-3">
+        <label for="email"> Official Email </label>
+        <input type="email" id="email" name="email" class="form-control" required placeholder="Email">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="number"> Phone Number </label>
+        <input type="text" id="number" name="number" class="form-control" required placeholder="Phone Number">
+      </div>
+      </div>
+    </div>
+    </template>
+
+    <template id="participantText">
+      <p class="p-text" style="margin-bottom: 6px;"><em><u></u></em></p>
+    </template>
+
+
+
+    <script src="static/assets/js/bootstrap.bundle.js"> </script>
+    
+
+    <script>
+
+      const navLinks = document.querySelectorAll('.nav-item:not(.dropdown)'); 
+      const menuToggle = document.getElementById('navbarNav'); 
+      const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false}); 
+      navLinks.forEach( function(l) 
+      { 
+        l.addEventListener('click', function() { 
+          // avoid flickering on desktop
+         if (menuToggle.classList.contains('show')) 
+        { bsCollapse.toggle(); } }); });
+
+      function update_form() {
+        
+        let details_template = document.getElementById("participantDetails");
+        let text_template = document.getElementById("participantText");
+        let team_size = document.getElementById("teamSize").value;
+        let team_details = document.getElementById("teamDetails");
+        let text_tag;
+
+        team_details.innerHTML = "";
+
+        for (i=0; i < team_size; ++i){
+
+          text_tag = text_template.content.cloneNode(true);
+          text_tag.children[0].children[0].children[0].textContent = `Participant ${i+1}`
+
+          team_details.appendChild(text_tag)
+          team_details.appendChild(details_template.content.cloneNode(true));
+        }
+
+      }
+
+      window.addEventListener("load", function() { update_form(); })
+
+    </script>
+</body>
+</html>
