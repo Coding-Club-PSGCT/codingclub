@@ -62,23 +62,34 @@
     </section>
 
     <!-- Register form -->
-    <form action="/register" method="POST">
+    <form action="/register" enctype="multipart/form-data" method="POST">
 
-      <label for="teamName">Team Name</label><br>
-      <input type="text" id="teamName" name="teamName" required placeholder="Team Name">
+      <div class="form-group">
+        <label for="teamName">Team Name</label><br>
+        <input type="text" id="teamName" name="teamName" class="form-control" placeholder="Team Name" required>
+      </div>
 
-      <label for="projectTitle"> Project Title </label><br>
-      <input type="text" id="projectTitle" name="projectTitle" placeholder="Project Title" required>
+      <div class="form-group">
+        <label for="projectTitle"> Project Title </label><br>
+        <input type="text" id="projectTitle" name="projectTitle" class="form-control" placeholder="Project Title" required>
+      </div>
 
+      <div class="form-group">
       <label for="teamSize"> Team Size </label><br>
-      <select name="teamSize" id="teamSize" name="teamSize" onchange="update_form()" required>
-        <option value="2" selected> 2 </option>
-        <option value="3"> 3 </option>
-        <option value="4"> 4 </option>
-        <option value="5"> 5 </option>
-      </select>
+        <select name="teamSize" id="teamSize" name="teamSize" onchange="update_form()" class="form-control" required>
+          <option value="2" selected> 2 </option>
+          <option value="3"> 3 </option>
+          <option value="4"> 4 </option>
+          <option value="5"> 5 </option>
+        </select>
+    </div>
 
       <div id="teamDetails">
+      </div>
+
+      <div class="form-group">
+        <label for="proposal"> Proposal </label>
+        <input type="file" name="proposal" class="form-control-file" id="proposal" required>
       </div>
 
       <input type="submit" value="Submit">
@@ -150,18 +161,25 @@
 
     <template>
       
-      <label for="name"> Name </label><br>
-      <input type="text" id="name" name="name" required placeholder="Name">
+      <div class="form-group">
+        <label for="name"> Name </label><br>
+        <input type="text" id="name" name="name" class="form-control" required placeholder="Name">
+      </div>
       
-      <label for="rollNo"> Roll Number </label><br>
-      <input type="text" id="rollNo" name="rollNo" required placeholder="Roll Number">
+      <div class="form-group">
+        <label for="rollNo"> Roll Number </label><br>
+        <input type="text" id="rollNo" name="rollNo" class="form-control" required placeholder="Roll Number">
+      </div>
 
-      <label for="email"> Official Email </label><br>
-      <input type="email" id="email" name="email" required placeholder="Email">
+      <div class="form-group">
+        <label for="email"> Official Email </label><br>
+        <input type="email" id="email" name="email" class="form-control" required placeholder="Email">
+      </div>
 
-      <label for="number"> Phone Number </label><br>
-      <input type="text" id="number" name="number" required placeholder="Phone Number">
-
+      <div class="form-group">
+        <label for="number"> Phone Number </label><br>
+        <input type="text" id="number" name="number" class="form-control" required placeholder="Phone Number">
+      </div>
     </template>
 
     <script src="assets/js/bootstrap.bundle.js"> </script>
@@ -193,7 +211,7 @@
 
       }
 
-      window.addEventListener("load", function() { update_form(); console.log("Event fired!") })
+      window.addEventListener("load", function() { update_form(); })
 
     </script>
 </body>
