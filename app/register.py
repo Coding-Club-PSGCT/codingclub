@@ -1,12 +1,15 @@
 import os
-from flask import request, Blueprint, redirect, current_app
+from flask import request, Blueprint, redirect, current_app, render_template
 from .models import Team, Participant, add_team
 from uuid import uuid4
 
 register_bp = Blueprint('register', __name__)
 
-@register_bp.route('/register', methods=['POST'])
+@register_bp.route('/register', methods=['GET', 'POST'])
 def register():
+
+	if request.method == 'GET':
+		return render_template('register.html')
 
 	if 'proposal' not in request.files:
 		return 'Please go back and upload proposal!'

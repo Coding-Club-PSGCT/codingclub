@@ -11129,4 +11129,34 @@ textarea.form-control-lg {
   }
 }
 
+.register-form {
+  padding-bottom: 3rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.btn-pad {
+  margin: 1rem;
+}
+
+.form-row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.form-row > .col, .form-row > [class*=col-] {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.p-text {
+  margin-bottom: 6px !important;
+}
+
 /*# sourceMappingURL=register.css.map */
