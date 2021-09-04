@@ -1,7 +1,5 @@
 from flask import Flask
 
-# TODO : add logging
-# TODO : fix UI
 
 def create_app():
 
