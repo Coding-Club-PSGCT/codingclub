@@ -89,3 +89,4 @@ ENV/
 .ropeproject
 
 app/*.db
+node_modules/

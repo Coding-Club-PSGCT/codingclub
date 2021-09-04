@@ -11131,6 +11131,15 @@ textarea.form-control-lg {
   }
 }
 
+.btn-toolbar-custom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.btn-toolbar-custom .input-group {
+  width: auto;
+}
+
 .display-2 {
   margin-bottom: 2rem;
   text-transform: capitalize;

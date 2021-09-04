@@ -21,3 +21,13 @@
                 
         }
 }
+
+.btn-toolbar-custom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  
+    .input-group {
+      width: auto;
+    }
+  }
