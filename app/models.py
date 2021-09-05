@@ -1,6 +1,9 @@
+import csv
+from flask.cli import AppGroup
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
+db_cli = AppGroup('db')
 
 class Team(db.Model):
 
@@ -37,6 +40,7 @@ Team.participants = db.relationship("Participant", order_by=Participant.id, back
 def init_app(app):
 
 	db.init_app(app)
+	app.cli.add_command(db_cli)
 
 	with app.app_context():
 		db.create_all()
@@ -50,5 +54,50 @@ def add_team(team:Team, commit=True):
 	if commit:
 		db.session.commit()
 
-def get_all():
-	return str([ [ p.name for p in team.participants ] for team in db.session.query(Team).all() ])
+
+
+	
+
+@db_cli.command('dump')
+def _dump_db():
+
+	with open('db_participants_dump.csv', mode='w', newline='') as csv_file:
+
+		fieldnames = [ 'team_name', 'partcipant_name', 'partcipant_roll_no', 'partcipant_email', 'partcipant_no',]
+		writer = csv.DictWriter(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL, fieldnames=fieldnames, dialect='excel')
+
+		writer.writeheader()
+
+		[ 
+			[ _write_participant(writer, p) for p in team.participants ] 
+			for team in db.session.query(Team).all() 
+		]
+
+	with open('db_teams_dump.csv', mode='w', newline='') as csv_file:
+
+		fieldnames = ['team_name', 'project_title', 'size', 'proposal_url',]
+		writer = csv.DictWriter(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL, fieldnames=fieldnames)
+
+		writer.writeheader()
+
+		[
+			_write_team(writer, team)
+			for team in db.session.query(Team).all()
+		]
+
+def _write_participant(writer, p):
+	writer.writerow({
+		'team_name': p.team.name,
+		'partcipant_name': p.name, 
+		'partcipant_roll_no': p.roll_no, 
+		'partcipant_email': p.email, 
+		'partcipant_no': p.phone_no
+		})
+
+def _write_team(writer, t):
+	writer.writerow({
+		'team_name': t.name,
+		'project_title': t.project_title,
+		'size': t.size,
+		'proposal_url': t.proposal_url
+		})
