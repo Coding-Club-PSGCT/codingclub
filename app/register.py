@@ -48,7 +48,7 @@ def register():
 
 
 	add_team(team)
-	return redirect('/static/index.html')
+	return redirect('/')
 
 def save_file(uploads_folder, file):
 

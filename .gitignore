@@ -54,7 +54,6 @@ coverage.xml
 local_settings.py
 
 # Flask stuff:
-instance/
 .webassets-cache
 
 # Scrapy stuff:
@@ -90,3 +89,8 @@ ENV/
 
 app/*.db
 node_modules/
+instance/*
+uploads/*
+
+!instance/.gitkeep
+!uploads/.gitkeep
