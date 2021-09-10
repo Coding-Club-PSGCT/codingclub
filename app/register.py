@@ -11,22 +11,10 @@ def register():
 	if request.method == 'GET':
 		return render_template('register.html')
 
-	if 'proposal' not in request.files:
-		return 'Please go back and upload proposal!'
-
-	if request.files['proposal'].filename == '':
-		return 'Please go back and upload proposal!'
-
-	file_url = save_file(
-		current_app.config['UPLOADS_DIR'], 
-		request.files['proposal']
-		)
-
+	
 	team = Team(
 		name=request.form['teamName'],
-		project_title=request.form['projectTitle'],
 		size=int(request.form['teamSize']),
-		proposal_url=file_url
 		)
 
 	team.participants = [
@@ -49,6 +37,24 @@ def register():
 
 	add_team(team)
 	return redirect('/')
+
+@register_bp.route('/upload_proposal', methods=['GET', 'POST'])
+def upload_proposal():
+
+	if request.method == 'GET':
+		return render_template('upload_proposal.html')
+	
+	if 'proposal' not in request.files:
+		return 'Please go back and upload proposal!'
+
+	if request.files['proposal'].filename == '':
+		return 'Please go back and upload proposal!'
+
+	file_url = save_file(
+		current_app.config['UPLOADS_DIR'], 
+		request.files['proposal']
+		)
+
 
 def save_file(uploads_folder, file):
 

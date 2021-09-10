@@ -11,9 +11,9 @@ class Team(db.Model):
 
 	id = db.Column(db.Integer, db.Sequence('team_id_seq'), primary_key=True)
 	name = db.Column(db.String, nullable=False)
-	project_title = db.Column(db.String, nullable=False)
+	project_title = db.Column(db.String, nullable=True)
 	size = db.Column(db.Integer, nullable=False)
-	proposal_url = db.Column(db.String(100), nullable=False)
+	proposal_url = db.Column(db.String(100), nullable=True)
 
 
 	def __repr__(self):
