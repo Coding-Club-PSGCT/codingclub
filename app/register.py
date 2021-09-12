@@ -1,6 +1,6 @@
 import os
 from flask import request, Blueprint, redirect, current_app, render_template
-from .models import Team, Participant, add_team
+from .models import Team, Participant, add_team, team_exists, add_proposal
 from uuid import uuid4
 
 register_bp = Blueprint('register', __name__)
@@ -11,22 +11,10 @@ def register():
 	if request.method == 'GET':
 		return render_template('register.html')
 
-	if 'proposal' not in request.files:
-		return 'Please go back and upload proposal!'
-
-	if request.files['proposal'].filename == '':
-		return 'Please go back and upload proposal!'
-
-	file_url = save_file(
-		current_app.config['UPLOADS_DIR'], 
-		request.files['proposal']
-		)
-
+	
 	team = Team(
 		name=request.form['teamName'],
-		project_title=request.form['projectTitle'],
 		size=int(request.form['teamSize']),
-		proposal_url=file_url
 		)
 
 	team.participants = [
@@ -49,6 +37,36 @@ def register():
 
 	add_team(team)
 	return redirect('/')
+
+@register_bp.route('/upload_proposal', methods=['GET', 'POST'])
+def upload_proposal():
+
+	if request.method == 'GET':
+		return render_template('upload_proposal.html', error_msg={})
+	
+	#Check if user has uploaded proposal file
+	if 'proposal' not in request.files or request.files['proposal'].filename == '':
+		return  render_template('upload_proposal.html', error_msg={'file':'Please go back and upload proposal!'})
+	
+	if not team_exists(request.form['teamName']):
+		return render_template('upload_proposal.html', error_msg={'team_name':'Team does not exist'})
+
+	file_url = save_file(
+		current_app.config['UPLOADS_DIR'], 
+		request.files['proposal']
+		)
+	
+	success = add_proposal(
+		team_name = request.form['teamName'],
+		project_title = request.form['projectTitle'],
+		proposal_url = file_url
+	)
+
+	if not success:
+		return render_template('upload_proposal.html', error_msg={'file':'Error while uploading proposal. Please upload proposal again'})
+	
+	return redirect('/')
+
 
 def save_file(uploads_folder, file):
 

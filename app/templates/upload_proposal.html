@@ -54,42 +54,47 @@
       </nav>
 
         <!-- Overview -->
-     <section class="register">
+     <section class="upload">
       <div class="container" >
         <div class="row text-center">
-            <h1 class="display-3--title fw-bold">Register</h1>
+            <h1 class="display-3--title fw-bold">Upload Project Proposal</h1>
         </div>
       </div>
     </section>
 
     <!-- Register form -->
     <div class="container">
-    <form action="/register" method="POST" class="register-form">
+    <form action="/upload_proposal" enctype="multipart/form-data" method="POST" class="upload-form">
 
       <div class="form-row">
 
-        <div class="col-md-6 mb-3">
+        <div class="col mb-3">
           <label for="teamName">Team Name</label>
           <input type="text" id="teamName" name="teamName" class="form-control" placeholder="Team Name" required>
+          <div class="error-message">
+            {{ error_msg.get('team_name', '') }}
+          </div>
         </div>
 
-        <div class="col-md-6 mb-3">
-        <label for="teamSize"> Team Size </label>
-          <select name="teamSize" id="teamSize" name="teamSize" onchange="update_form()" class="form-control" required>
-            <option value="2" selected> 2 </option>
-            <option value="3"> 3 </option>
-            <option value="4"> 4 </option>
-            <option value="5"> 5 </option>
-          </select>
-        </div>
+
   </div>
 
-      
-      <p class="lead" style="padding-top: 20px;"> <u> Team Details </u> </b>
-
-      <div id="teamDetails">
+      <div class="form-row">
+        <div class="col mb-3">
+        <label for="projectTitle"> Project Title </label>
+        <input type="text" id="projectTitle" name="projectTitle" class="form-control" placeholder="Project Title" required>
+      </div>
       </div>
 
+      <div class="form-row">
+        <div class="col mb-3">
+        <label for="proposal" class="lead"> <u> Proposal</u></label> <br>
+        <input type="file" name="proposal" class="form-control-file" id="proposal" required>
+        <div class="error-message">
+          {{ error_msg.get('file', '') }}
+        </div>
+        </div>
+      </div>
 
       <div class="form-row">
         <div class="col text-center">
@@ -97,6 +102,7 @@
         </div>
       </div>
     </form> 
+
   </div>
 
 <!-- Footer -->
@@ -163,46 +169,10 @@
       </div>
     </footer>
 
-    <template id="participantDetails">
-
-      <div class="form-group">
-
-      <div class="form-row">
-      
-        <div class="col-md-6 mb-3">
-          <label for="name"> Name </label>
-          <input type="text" id="name" name="name" class="form-control" required placeholder="Name">
-        </div>
-        
-        <div class="col-md-6 mb-3">
-          <label for="rollNo"> Roll Number </label>
-          <input type="text" id="rollNo" name="rollNo" class="form-control" required placeholder="Roll Number">
-        </div>
-      </div>
-
-      <div class="form-row">
-
-      <div class="col-md-6 mb-3">
-        <label for="email"> Official Email </label>
-        <input type="email" id="email" name="email" class="form-control" required placeholder="Email">
-      </div>
-
-      <div class="col-md-6 mb-3">
-        <label for="number"> Phone Number </label>
-        <input type="text" id="number" name="number" class="form-control" required placeholder="Phone Number">
-      </div>
-      </div>
-    </div>
-    </template>
-
-    <template id="participantText">
-      <p class="p-text" style="margin-bottom: 6px;"><em><u></u></em></p>
-    </template>
-
 
 
     <script src="static/assets/js/bootstrap.bundle.js"> </script>
-    
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-462MZJ64TY"></script>
     <script>
@@ -212,6 +182,7 @@
 
       gtag('config', 'G-462MZJ64TY');
     </script>
+    
 
     <script>
 
@@ -224,29 +195,6 @@
           // avoid flickering on desktop
          if (menuToggle.classList.contains('show')) 
         { bsCollapse.toggle(); } }); });
-
-      function update_form() {
-        
-        let details_template = document.getElementById("participantDetails");
-        let text_template = document.getElementById("participantText");
-        let team_size = document.getElementById("teamSize").value;
-        let team_details = document.getElementById("teamDetails");
-        let text_tag;
-
-        team_details.innerHTML = "";
-
-        for (i=0; i < team_size; ++i){
-
-          text_tag = text_template.content.cloneNode(true);
-          text_tag.children[0].children[0].children[0].textContent = `Participant ${i+1}`
-
-          team_details.appendChild(text_tag)
-          team_details.appendChild(details_template.content.cloneNode(true));
-        }
-
-      }
-
-      window.addEventListener("load", function() { update_form(); })
 
     </script>
 </body>
