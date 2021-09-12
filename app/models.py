@@ -54,7 +54,7 @@ def add_team(team:Team):
 
 def add_proposal(team_name:str, project_title:str, proposal_url:str):
 
-	team = Team.query.filter_by(name = team_name).scalar()
+	team = db.session.query(Team).filter_by(name = team_name).scalar()
 
 	if team is None:
 		return False
@@ -115,3 +115,20 @@ def _write_team(writer, t):
 		'size': t.size,
 		'proposal_url': t.proposal_url
 		})
+
+@db_cli.command('erase')
+def _erase_db():
+
+	answer = input('\nEnter "Delete all data from database 5436**" to delete all data from database : ')
+
+	if answer == 'Delete all data from database 5436**':
+
+		db.session.query(Team).delete()
+		db.session.query(Participant).delete()
+		db.session.commit()
+
+		print('Database erased completely')
+	
+	else:
+
+		print('Phrase entered doesn\'t match the one provided. Database deletion canceled')
