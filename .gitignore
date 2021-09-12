@@ -90,7 +90,7 @@ ENV/
 app/*.db
 node_modules/
 instance/*
-uploads/*
+app/static/uploads/*
 
 *.csv
 

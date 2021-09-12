@@ -71,6 +71,9 @@
         <div class="col mb-3">
           <label for="teamName">Team Name</label>
           <input type="text" id="teamName" name="teamName" class="form-control" placeholder="Team Name" required>
+          <div class="error-message">
+            {{ error_msg.get('team_name', '') }}
+          </div>
         </div>
 
 
@@ -87,6 +90,9 @@
         <div class="col mb-3">
         <label for="proposal" class="lead"> <u> Proposal</u></label> <br>
         <input type="file" name="proposal" class="form-control-file" id="proposal" required>
+        <div class="error-message">
+          {{ error_msg.get('file', '') }}
+        </div>
         </div>
       </div>
 
@@ -96,6 +102,7 @@
         </div>
       </div>
     </form> 
+
   </div>
 
 <!-- Footer -->

@@ -47,16 +47,30 @@ def init_app(app):
 		db.session.commit()
 	
 
-def add_team(team:Team, commit=True):
+def add_team(team:Team):
 	
 	db.session.add(team)
+	db.session.commit()
 
-	if commit:
-		db.session.commit()
+def add_proposal(team_name:str, project_title:str, proposal_url:str):
+
+	team = Team.query.filter_by(name = team_name).scalar()
+
+	if team is None:
+		return False
+
+	team.project_title = project_title
+	team.proposal_url = proposal_url
+	db.session.commit()
+
+	return True
 
 
+def team_exists(team_name:str) -> bool:
 
-	
+	team = db.session.query(Team).filter(Team.name == team_name)
+	return db.session.query(team.exists()).scalar()
+
 
 @db_cli.command('dump')
 def _dump_db():
@@ -70,7 +84,7 @@ def _dump_db():
 
 		[ 
 			[ _write_participant(writer, p) for p in team.participants ] 
-			for team in db.session.query(Team).all() 
+			for team in db.session.query(Team).all()
 		]
 
 	with open('db_teams_dump.csv', mode='w', newline='') as csv_file:
