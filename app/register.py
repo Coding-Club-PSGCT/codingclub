@@ -1,6 +1,7 @@
 import os
 from flask import request, Blueprint, redirect, current_app, render_template
 from .models import Team, Participant, add_team, team_exists, add_proposal
+from .email import send_registration_email, validate_emails
 from uuid import uuid4
 
 register_bp = Blueprint('register', __name__)
@@ -34,8 +35,15 @@ def register():
 		)
 	]
 
+	try:
+		validate_emails(team)
+		send_registration_email(team)
+	except Exception as e:
+		current_app.logger.warning('Error while sending registration email : %s', e)
+		return render_template('register.html', error_msg='Email verification failed. Ensure you have entered the official college email with no typos')
 
 	add_team(team)
+
 	return redirect('/')
 
 @register_bp.route('/upload_proposal', methods=['GET', 'POST'])
