@@ -11,8 +11,6 @@ def create_app():
 	from . import index, register, models, email
 
 	models.init_app(app)
-	email.init_app(app)
-	app.register_blueprint(register.register_bp)
 	app.register_blueprint(index.index_bp)
 
 
